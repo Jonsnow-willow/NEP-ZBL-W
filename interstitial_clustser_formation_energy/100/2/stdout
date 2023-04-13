@@ -1,0 +1,133 @@
+
+***************************************************************
+*                 Welcome to use GPUMD                        *
+*     (Graphics Processing Units Molecular Dynamics)          *
+*                    Version 3.3.1                            *
+*              This is the gpumd executable                   *
+***************************************************************
+
+
+---------------------------------------------------------------
+Compiling options:
+---------------------------------------------------------------
+
+DEBUG is off: Use different PRNG seeds for different runs.
+This version can only be used with an NEP potential.
+
+---------------------------------------------------------------
+GPU information:
+---------------------------------------------------------------
+
+Device id:               0
+Device name:             GeForce RTX 2080 Ti
+Compute capability:      7.5
+Amount of global memory: 10.7608 GB
+Number of SMs:           68
+
+---------------------------------------------------------------
+Run simulation for '.'.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Started initializing positions and related parameters.
+---------------------------------------------------------------
+
+Number of atoms is 250002.
+Maximum number of neighbors is 200.
+Initial cutoff for neighbor list is 7 A.
+Use orthogonal box.
+Do not specify initial velocities here.
+Have no grouping method.
+Box lengths are
+    Lx =     1.5926000000e+02 A
+    Ly =     1.5926000000e+02 A
+    Lz =     1.5926000000e+02 A
+Use periodic boundary conditions along x.
+Use periodic boundary conditions along y.
+Use periodic boundary conditions along z.
+There is only one atom type.
+    250002 atoms of type 0.
+Build the initial neighbor list with cutoff 7 A and size 200.
+    calculated maximum number of neighbors for one atom in the system = 90
+
+---------------------------------------------------------------
+Finished initializing positions and related parameters.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Started executing the commands in run.in.
+---------------------------------------------------------------
+
+Use the NEP2 potential with 1 atom type.
+    type 0 (W with Z = 74).
+    has ZBL with inner cutoff 1 A and outer cutoff 2 A.
+    radial cutoff = 6 A.
+    angular cutoff = 4 A.
+    n_max_radial = 15.
+    n_max_angular = 10.
+    l_max_3body = 4.
+    ANN = 60-100-1.
+    number of neural network parameters = 6201.
+    number of descriptor parameters = 0.
+    total number of parameters = 6201
+    applies to atoms [0, 250002) from type 0 to type 0.
+Use NVE ensemble for this run.
+
+Start to do an energy minimization.
+    using the steepest descent method.
+    with fixed box.
+    with a force tolerance of 0.0001 eV/A.
+    for maximally 1000 steps.
+
+Energy minimization started.
+    step 0: f_max = 10.4647 eV/A.
+    step 100: f_max = 0.219133 eV/A.
+    step 200: f_max = 0.219133 eV/A.
+    step 300: f_max = 0.219133 eV/A.
+    step 400: f_max = 0.219133 eV/A.
+    step 500: f_max = 0.219133 eV/A.
+    step 600: f_max = 0.219133 eV/A.
+    step 700: f_max = 0.219133 eV/A.
+    step 800: f_max = 0.219133 eV/A.
+    step 900: f_max = 0.219133 eV/A.
+    step 1000: f_max = 0.219133 eV/A.
+Energy minimization finished.
+Time step for this run is 0 fs.
+Dump thermo every 1 steps.
+
+---------------------------------------------------------------
+Warning: Starting from GPUMD-v3.3.1, off-diagonal pressure
+         components are added to thermo.out.
+---------------------------------------------------------------
+
+Dump position.
+    every 1 steps.
+Run 1 steps.
+    1 steps completed.
+
+---------------------------------------------------------------
+Number of neighbor list updates for this run = 1.
+    Calculated maximum number of neighbors for this run = 90.
+    The 'MN' parameter you set in xyz.in = 200.
+    You can consider increasing/decreasing 'MN' based on the information above.
+Time used for this run = 0.34 second.
+Speed of this run = 735300 atom*step/second.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Finished executing the commands in run.in.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Time used for '.' = 91.290000 s.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Finished running GPUMD.
+---------------------------------------------------------------
+

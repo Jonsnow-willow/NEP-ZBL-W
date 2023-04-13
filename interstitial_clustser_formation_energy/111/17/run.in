@@ -1,0 +1,8 @@
+potential      nep.txt 0 
+ensemble       nve
+minimize       sd 1.0e-4 1000
+time_step      0
+dump_thermo    1
+dump_position  1
+run 1
+

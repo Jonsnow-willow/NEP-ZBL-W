@@ -1,9 +1,7 @@
 from ase.build import bulk
 from ase import Atom
-from calorine import GPUNEP
 from pynep.calculate import NEP
 from ase.optimize import QuasiNewton
-from ase.io import read, write
 from ase.constraints import ExpCellFilter
 from ase.optimize import FIRE
 from ase.optimize import LBFGS
@@ -85,7 +83,7 @@ def main():
     Supercell = (4,5,6)
     a = np.array(Supercell)
     k = (1 + 2 * (a[0]*a[1]*a[2])) / (2 * (a[0]*a[1]*a[2]))
-    Nep = ('nep.txt')  
+    Nep = ('Train/nep.txt')  
     E = []
     for i in ['none','111','110','100','octa','tetra','vac']:
         atoms = Point(Lattice, Supercell, i) 
@@ -99,7 +97,7 @@ def main():
     E_tetra = -k * E[0] + E[5]
     k = (-1 + 2 * (a[0]*a[1]*a[2])) / (2 * (a[0]*a[1]*a[2]))   
     E_vac   = -k * E[0] + E[6]
-    f = open('defect.out','a')    
+    f = open('point_defect_formation_energy/defect.out','w')    
     print ('Ef_<111>: ',   E_111, file = f)
     print ('Ef_<110>: ',   E_110, file = f)
     print ('Ef_<100>: ',   E_100, file = f)

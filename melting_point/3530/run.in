@@ -1,0 +1,8 @@
+potential ../nep.txt 0
+time_step 1
+
+ensemble npt_scr 3530 3530 100 0 500 1000
+dump_thermo 1000
+dump_exyz 100000 0 0
+dump_restart 100000
+run 500000

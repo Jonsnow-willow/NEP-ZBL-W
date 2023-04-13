@@ -1,0 +1,167 @@
+
+***************************************************************
+*                 Welcome to use GPUMD                        *
+*     (Graphics Processing Units Molecular Dynamics)          *
+*                     Version 3.3                             *
+*              This is the gpumd executable                   *
+***************************************************************
+
+
+---------------------------------------------------------------
+Compiling options:
+---------------------------------------------------------------
+
+DEBUG is off: Use different PRNG seeds for different runs.
+This version can only be used with an NEP potential.
+
+---------------------------------------------------------------
+GPU information:
+---------------------------------------------------------------
+
+Device id:               0
+Device name:             A100-SXM4-40GB
+Compute capability:      8.0
+Amount of global memory: 39.5871 GB
+Number of SMs:           108
+
+---------------------------------------------------------------
+Run simulation for './'.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Started initializing positions and related parameters.
+---------------------------------------------------------------
+
+Number of atoms is 13500.
+Maximum number of neighbors is 150.
+Initial cutoff for neighbor list is 7 A.
+Use orthogonal box.
+Do not specify initial velocities here.
+Have 1 grouping method(s).
+Box lengths are
+    Lx =     4.7778000000e+01 A
+    Ly =     4.7778000000e+01 A
+    Lz =     9.5556000000e+01 A
+Use periodic boundary conditions along x.
+Use periodic boundary conditions along y.
+Use periodic boundary conditions along z.
+There are 2 groups of atoms in grouping method 0.
+    6750 atoms in group 0.
+    6750 atoms in group 1.
+There is only one atom type.
+    13500 atoms of type 0.
+Build the initial neighbor list with cutoff 7 A and size 150.
+    calculated maximum number of neighbors for one atom in the system = 88
+
+---------------------------------------------------------------
+Finished initializing positions and related parameters.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Started executing the commands in run.in.
+---------------------------------------------------------------
+
+Use the NEP2 potential with 1 atom type.
+    type 0 (W with Z = 74).
+    has ZBL with inner cutoff 1 A and outer cutoff 2 A.
+    radial cutoff = 6 A.
+    angular cutoff = 4 A.
+    n_max_radial = 15.
+    n_max_angular = 10.
+    l_max_3body = 4.
+    ANN = 60-100-1.
+    number of neural network parameters = 6201.
+    number of descriptor parameters = 0.
+    total number of parameters = 6201
+    applies to atoms [0, 13500) from type 0 to type 0.
+Initialized velocities with T = 2500 K.
+Time step for this run is 1 fs.
+Use NPT ensemble for this run.
+    choose the SCR method.
+    initial temperature is 2500 K.
+    final temperature is 2500 K.
+    tau_T is 100 time_step.
+    isotropic pressure is 0 GPa.
+    bulk modulus is 500 GPa.
+    tau_p is 1000 time_step.
+Group 1 in grouping method 0 will be fixed.
+Dump thermo every 1000 steps.
+Dump extended XYZ.
+    every 100000 steps.
+    without velocity data.
+    without force data.
+Dump restart every 100000 steps.
+Run 1000000 steps.
+    100000 steps completed.
+    200000 steps completed.
+    300000 steps completed.
+    400000 steps completed.
+    500000 steps completed.
+    600000 steps completed.
+    700000 steps completed.
+    800000 steps completed.
+    900000 steps completed.
+    1000000 steps completed.
+
+---------------------------------------------------------------
+Number of neighbor list updates for this run = 29440.
+    Calculated maximum number of neighbors for this run = 91.
+    The 'MN' parameter you set in xyz.in = 150.
+    You can consider increasing/decreasing 'MN' based on the information above.
+Time used for this run = 4682.06 second.
+Speed of this run = 2.88335e+06 atom*step/second.
+---------------------------------------------------------------
+
+Use NPT ensemble for this run.
+    choose the SCR method.
+    initial temperature is 4500 K.
+    final temperature is 4500 K.
+    tau_T is 100 time_step.
+    isotropic pressure is 0 GPa.
+    bulk modulus is 500 GPa.
+    tau_p is 1000 time_step.
+Group 0 in grouping method 0 will be fixed.
+Dump thermo every 1000 steps.
+Dump extended XYZ.
+    every 100000 steps.
+    without velocity data.
+    without force data.
+Dump restart every 100000 steps.
+Run 1000000 steps.
+    100000 steps completed.
+    200000 steps completed.
+    300000 steps completed.
+    400000 steps completed.
+    500000 steps completed.
+    600000 steps completed.
+    700000 steps completed.
+    800000 steps completed.
+    900000 steps completed.
+    1000000 steps completed.
+
+---------------------------------------------------------------
+Number of neighbor list updates for this run = 40344.
+    Calculated maximum number of neighbors for this run = 88.
+    The 'MN' parameter you set in xyz.in = 150.
+    You can consider increasing/decreasing 'MN' based on the information above.
+Time used for this run = 5009.46 second.
+Speed of this run = 2.6949e+06 atom*step/second.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Finished executing the commands in run.in.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Time used for './' = 9691.567721 s.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Finished running GPUMD.
+---------------------------------------------------------------
+

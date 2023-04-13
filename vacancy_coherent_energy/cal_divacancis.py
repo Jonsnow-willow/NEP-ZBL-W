@@ -1,9 +1,6 @@
 from ase.build import bulk
-from ase import Atom
-from calorine import GPUNEP
 from pynep.calculate import NEP
 from ase.optimize import QuasiNewton
-from ase.io import read, write
 from ase.constraints import ExpCellFilter
 from ase.optimize import FIRE
 from ase.optimize import LBFGS
@@ -102,7 +99,7 @@ def main():
     Lattice = 3.185
     Supercell = (4,5,6)
     a = np.array(Supercell)
-    Nep = ('nep.txt')  
+    Nep = ('Train/nep.txt')  
     E = []
     for i in ['none','1','2','3','4','5','0']:
         atoms = Vac(Lattice, Supercell, i) 
@@ -125,7 +122,7 @@ def main():
     print ('E_4NN: ',      E_4)
     print ('E_5NN: ',      E_5)
     
-    f = open('vacancy.out','a')    
+    f = open('vacancy_coherent_energy/vacancy.out','a')    
     print ('Ef_<vac>: ',   E_vac, file = f)
     print ('E_1NN: ',      E_1, file = f)
     print ('E_2NN: ',      E_2, file = f)

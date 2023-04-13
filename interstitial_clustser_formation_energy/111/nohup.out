@@ -1,0 +1,23 @@
+/home/iap17/deepmd-kit/lib/python3.9/site-packages/calorine/gpunep_calculator.py:250: UserWarning: . is not empty.
+  warnings.warn(f'{self._directory} is not empty.')
+0 success
+1 success
+1 dir exist
+5 success
+7 success
+9 success
+17 success
+23 success
+27 success
+35 success
+43 success
+51 success
+63 success
+69 success
+91 success
+99 success
+117 success
+129 success
+137 success
+159 success
+20

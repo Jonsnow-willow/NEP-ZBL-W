@@ -1,16 +1,7 @@
 from ase.build import bulk
-from ase import Atom
-from calorine import GPUNEP, CPUNEP
 from pynep.calculate import NEP
-from ase.optimize import QuasiNewton
-from ase.io import read, write
-from ase.constraints import ExpCellFilter
 from ase.optimize import FIRE
-from ase.optimize import LBFGS
-from ase import io
 from ase.neb import NEB
-import numpy as np
-import os
 
 def Point(lattice, supercell=(1,1,1), point = 'none'):
     a = lattice
@@ -33,7 +24,7 @@ def Point(lattice, supercell=(1,1,1), point = 'none'):
           
 def main():
     Lattice = 3.1852
-    Nep = ('train/nep.txt')  
+    Nep = ('Train/nep.txt')  
     Supercell = (4,4,4)
     initial = Point(Lattice, Supercell, 'vacancy1')
     final = Point(Lattice, Supercell, 'vacancy2')
@@ -55,7 +46,7 @@ def main():
     for image in images:
         image.calc = NEP(Nep)
         energy.append(image.get_potential_energy())
-    f = open('vac_migration.out','a')
+    f = open('vacancy_migration_energy/vac_migration.out','a')
     print(energy, file = f)
     print(energy[7]-energy[0], file = f)
     f.close()

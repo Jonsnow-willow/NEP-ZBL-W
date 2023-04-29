@@ -25,19 +25,19 @@ def Point(lattice, supercell=(1,1,1), point = 'none'):
 def main():
     Lattice = 3.1852
     Nep = ('Train/nep.txt')  
-    Supercell = (4,4,4)
+    Supercell = (4,5,6)
     initial = Point(Lattice, Supercell, 'vacancy1')
     final = Point(Lattice, Supercell, 'vacancy2')
-    # Make a band consisting of 5 images:
+    # Make a band consisting of 11 images:
     images = [initial]
-    images += [initial.copy() for i in range(13)]
+    images += [initial.copy() for i in range(11)]
     images += [final]
     print(len(images))
     neb = NEB(images)
     # Interpolate linearly the potisions of the three middle images:
     neb.interpolate()
     # Set calculators:
-    for image in images[1:15]:
+    for image in images[1:13]:
         image.calc = NEP(Nep)
     # Optimize:
     optimizer = FIRE(neb)
@@ -48,9 +48,9 @@ def main():
         energy.append(image.get_potential_energy())
     f = open('vacancy_migration_energy/vac_migration.out','a')
     print(energy, file = f)
-    print(energy[7]-energy[0], file = f)
+    print(energy[6]-energy[0], file = f)
     f.close()
-   
+  
 if __name__ == "__main__":
     main()
 

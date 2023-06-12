@@ -3,21 +3,11 @@ clear; close all;
 %%%%%%%%%load data%%%%%%%%%
 test = 1; % Default to test
 
-load loss.out; 
-
-if(test)
-    load energy_test.out;load virial_test.out;load force_test.out;
-    energy=energy_test;
-    virial=virial_test;
-    force=force_test;
-    loss = [loss(:,3:4) loss(:,8:10)];
-else
-    load energy_train.out;load virial_train.out;load force_train.out;
-    energy=energy_train;
-    virial=virial_train;
-    force=force_train;
-    loss = loss(:,3:7);
-end
+load loss.out; load energy_train.out;load virial_train.out;load force_train.out;
+energy=energy_train;
+virial=virial_train;
+force=force_train;
+loss = loss(:,3:7);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

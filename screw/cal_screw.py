@@ -2,8 +2,6 @@ from ase.neb import NEB
 from ase import Atoms
 from pynep.calculate import NEP
 from ase.optimize import FIRE
-import matplotlib.pyplot as plt
-import numpy as np
 
 def dump_xyz(filename, atoms, comment = ''):
     with open(filename, 'a') as f:
@@ -46,12 +44,6 @@ def read_xyz(filename):
             frames.append(Atoms(symbols=symbols, positions=positions, cell = cell, pbc = pbc))
     return frames
 
-MV4S = [0,0,0,0,0.00272027,0.018451292,0.042325469,0.055881881,0.059555449,0.055453378,0.035437329,0.008974482,0,0,0,0]
-MV2B = [0,0,0.001211684,0.014145402,0.033933558,0.047929706,0.051603274,0.045556091,0.027274916,0.007043813,0,0,0]
-DFT_csanyi = [0,0.048115872,0.10106564,0.071874498,0.03106564]
-DFT_Rodney = [0,0.007497994,0.030386776,0.057786872,0.079858771,0.087961804,0.078850907,0.056397047,0.028762638,0.00496068,0]
-DFT_stoller = [0,0.005376344,0.023318889,0.046451613,0.068284385,0.078709677,0.067839833,0.045806452,0.021808698,0.003020382,0]
-
 initial = read_xyz('initial_135at_periodic.xyz')[0]
 final = read_xyz('final_135at_periodic_dipole_move.xyz')[0]
 images = [initial] + [initial.copy() for i in range(9)] + [final]
@@ -66,11 +58,4 @@ energies -= min(energies)
 for image in images:
     dump_xyz('screw.xyz', image, comment=f' config_type = screw')  
 
-plt.plot(np.linspace(0, 1, len(energies)), energies, marker='o', label='UNEP')
-plt.plot(np.linspace(0, 1, len(MV4S)), MV4S, marker='o', label='MV4S')
-#plt.plot(np.linspace(0, 1, len(MV2B)), MV2B, marker='o')
-plt.plot(np.linspace(0, 1, len(DFT_csanyi)), DFT_csanyi, marker='o', label='DFT-Csanyi')
-plt.plot(np.linspace(0, 1, len(DFT_Rodney)), DFT_Rodney, marker='o', label='DFT-Rodney')
-plt.plot(np.linspace(0, 1, len(DFT_stoller)), DFT_stoller, marker='o', label='DFT-Stoller')
-plt.legend()
-plt.savefig('screw_dipole_move.png')
+print(energies)
